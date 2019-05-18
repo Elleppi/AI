@@ -1,11 +1,9 @@
 # Simple Game
 
-## What
+## What is it ?
 
 Simple Game is a Python script that simulates an entity within a map that tries to find the WINNING cell through the strategy of Reinforcement Learning.
 The entity starts off with no idea of where the WINNING cell is located within the map. It tries any possible route until it starts learning the best (shortest) path to reach the WINNING cell.
-
-## How
 
 The map is 11x11 cells and composed of walls, 4 LOSING cells and 1 WINNING cell. At each step, the entity is able to go towards 4 directions: North, South, East or West, unless there is either a wall or the edge of the map.
 -	In case the entity falls into a LOSING cell, the game ends and the entity restarts from the center of the map;
