@@ -1,4 +1,5 @@
 from tkinter import *
+
 master = Tk()
 
 triangle_size = 0.1
@@ -22,7 +23,6 @@ walls = [(1, 1), (2, 1), (3, 1), (4, 1), (6, 1), (7, 1), (8, 1), (9, 1),
 specials = [(5, 3, "red", -1), (3, 5, "red", -1), (7, 5, "red", -1), (5, 7, "red", -1), (0, 0, "green", 1)]
 cell_scores = {}
 
-
 def create_triangle(i, j, action):
     if action == actions[0]:
         return board.create_polygon((i+0.5-triangle_size)*Width, (j+triangle_size)*Width,
@@ -45,7 +45,6 @@ def create_triangle(i, j, action):
                                     (i+1)*Width, (j+0.5)*Width,
                                     fill="white", width=1)
 
-
 def render_grid():
     global specials, walls, Width, x, y, player
     for i in range(x):
@@ -62,7 +61,6 @@ def render_grid():
 
 render_grid()
 
-
 def set_cell_score(state, action, val):
     global cell_score_min, cell_score_max
     triangle = cell_scores[state][action]
@@ -75,7 +73,6 @@ def set_cell_score(state, action, val):
         green += "0"
     color = "#" + red + green + "00"
     board.itemconfigure(triangle, fill=color)
-
 
 def try_move(dx, dy):
     global player, x, y, score, walk_reward, me, restart
@@ -99,22 +96,17 @@ def try_move(dx, dy):
             return
     #print "score: ", score
 
-
 def call_up(event):
     try_move(0, -1)
-
 
 def call_down(event):
     try_move(0, 1)
 
-
 def call_left(event):
     try_move(-1, 0)
 
-
 def call_right(event):
     try_move(1, 0)
-
 
 def restart_game():
     global player, score, me, restart
@@ -135,7 +127,6 @@ me = board.create_rectangle(player[0]*Width+Width*2/10, player[1]*Width+Width*2/
                             player[0]*Width+Width*8/10, player[1]*Width+Width*8/10, fill="orange", width=1, tag="me")
 
 board.grid(row=0, column=0)
-
 
 def start_game():
     master.mainloop()

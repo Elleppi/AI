@@ -22,7 +22,6 @@ for (i, j, c, w) in World.specials:
         Q[(i, j)][action] = w
         World.set_cell_score((i, j), action, w)
 
-
 def do_action(action):
     s = World.player
     r = -World.score
@@ -40,7 +39,6 @@ def do_action(action):
     r += World.score
     return s, action, r, s2
 
-
 def max_Q(s):
     val = None
     act = None
@@ -50,12 +48,10 @@ def max_Q(s):
             act = a
     return act, val
 
-
 def inc_Q(s, a, alpha, inc):
     Q[s][a] *= 1 - alpha
     Q[s][a] += alpha * inc
     World.set_cell_score(s, a, Q[s][a])
-
 
 def run():
     global discount
@@ -84,7 +80,6 @@ def run():
 
         # MODIFY THIS SLEEP IF THE GAME IS GOING TOO FAST.
         time.sleep(0.1)
-
 
 t = threading.Thread(target=run)
 t.daemon = True
