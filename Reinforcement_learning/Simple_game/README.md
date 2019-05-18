@@ -19,4 +19,4 @@ The map is 11x11 cells and composed of walls, 4 LOSING cells and 1 WINNING cell.
 
 ## Watch it !
 
-coming soon
+www.lorenzoparis.it/simple_game.html
